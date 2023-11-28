@@ -1,6 +1,7 @@
 package org.example.hw4;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -21,11 +22,13 @@ class BookServiceTest {
         when(mockBookRepository.findAll()).thenReturn(books);
     }
     @Test
+    @DisplayName("Отработка поиска книги по ID")
     void findBookById() {
         assertThat(mockBookService.findBookById("1")).isEqualTo(book);
     }
 
     @Test
+    @DisplayName("Отработка поиска всех книг")
     void findAllBooks() {
         assertThat(mockBookService.findAllBooks()).isEqualTo(books);
     }
